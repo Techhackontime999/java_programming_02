@@ -13,6 +13,12 @@ D	              4.0	          Pass            30-39%
 F	              0.0	          Fail            below 30%
  */
 
+
+/*
+ * grade point is used in:
+ * 1.for calculate SGPA:-> average of grade point across all subject in a semester
+ * 2.for calclate CGPA:->weighted average of grade points acoss all semesters.
+ */
 package com.BasicProgram;
 import java.util.Scanner;
 public class Grading_Calculator {
@@ -37,6 +43,7 @@ public class Grading_Calculator {
             }
         }
         System.out.println("<<<<<<<<<<<< Your Total Percentage >>>>>>>>>");
+        sc.close();
        
     }
 }
