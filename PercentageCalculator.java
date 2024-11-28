@@ -24,7 +24,7 @@ public class PercentageCalculator {
             }
         }
         System.out.println("<<<<<<<<<<<< Your Total Percentage >>>>>>>>>");
-        float Percentage = (totalMarks * maxMarks) / totalMaxMarks;
+        float Percentage = (totalMarks * 100) / totalMaxMarks;
         System.out.print("Percentage: ");
         System.out.println(Percentage);
     }
