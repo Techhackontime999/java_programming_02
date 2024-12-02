@@ -1,6 +1,3 @@
-// // wap a program to find longest word fom the string
-// my 2nd terminology to solve it
-
 package com.BasicProgram;
 
 import java.util.Scanner;
@@ -8,21 +5,29 @@ import java.util.Scanner;
 public class LongWordInSentence {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter Your String : ");
+        System.out.print("Enter Your String: ");
         String fullstr = sc.nextLine();
         String[] parts = fullstr.split("\\s+");
-        StringBuilder resultstr = new StringBuilder();
         String prevWord = "";
-        // resultstr.append(fullstr);
+        String sameStr = "";
+
         System.out.println("********************* Your Result *********************");
-        if (fullstr == "") {
-            System.out.println("your string is empty.");
+        if (fullstr.isBlank()) { // Corrected string comparison for empty check
+            System.out.println("Your string is empty.");
         } else {
-
             for (String currentWord : parts) {
-
+                if (currentWord.length() > prevWord.length()) {
+                    prevWord = currentWord;
+                    sameStr = currentWord; // Reset sameStr with the new longest word
+                } else if (currentWord.length() == prevWord.length() && !sameStr.contains(currentWord)) {
+                    sameStr += " " + currentWord; // Append unique words with the same length
+                }
             }
-        }
+            System.out.println("Longest Words with Same Length: " + sameStr.trim());
+            System.out.println("Last Longest Word: " + prevWord);
+            System.out.println("Longest Word Length: " + prevWord.length());
+        }          
+        sc.close(); // Close the scanner to avoid resource leaks
     }
 }
 
